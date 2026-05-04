@@ -2,8 +2,5 @@
 <p>{{status}}</p>
 
 @for (entry of budgetEntries; track entry.id) {
-  <div>
-    <h3>{{entry.description}}</h3>
-    <span>{{entry.amount}}</span>
-  </div>
+  <app-budget-entry [entry]="entry"> </app-budget-entry>
 }

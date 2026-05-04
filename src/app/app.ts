@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { from, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators'
 import { BudgetEntry } from './models/budget-entry.interface';
+import { BudgetEntryComponent } from './budget-entry/budget-entry';
 
 const budgetEntriesData: BudgetEntry[] = [
   { id: 1, description: "Groceries", amount: 420 },
@@ -13,6 +14,7 @@ const budgetEntriesData: BudgetEntry[] = [
 
 @Component({
   selector: 'app-root',
+  imports: [BudgetEntryComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
