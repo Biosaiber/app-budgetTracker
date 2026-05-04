@@ -20,10 +20,12 @@ const budgetEntriesData: BudgetEntry[] = [
 export class App implements OnInit, OnDestroy {
   budgetEntries: BudgetEntry[] = [];
   budgetSubscription?: Subscription;
+  status: string = "Fetching Data...";
 
   ngOnInit() {
     this.budgetSubscription = this.simulateDataRetrieval().subscribe({
-      next: (data) => this.budgetEntries.push(data)
+      next: (data) => this.budgetEntries.push(data),
+      complete: () => this.status = "Application Loaded"
     })
   }
   ngOnDestroy() {
