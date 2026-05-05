@@ -37,5 +37,8 @@ export class App implements OnInit, OnDestroy {
   simulateDataRetrieval() {
     return from(budgetEntriesData).pipe(delay(2000))
   }
+  deleteEntry(entryId:number) {
+    this.budgetEntries = this.budgetEntries.filter(entry => entry.id !== entryId)
+  }
     
 }
