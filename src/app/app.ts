@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { from, Subscription } from 'rxjs';
+import { from, of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators'
 import { BudgetEntry } from './models/budget-entry.interface';
 import { BudgetEntryComponent } from './budget-entry/budget-entry';
@@ -30,15 +30,28 @@ export class App implements OnInit, OnDestroy {
       complete: () => this.status = "Application Loaded"
     })
   }
-  ngOnDestroy() {
-    this.budgetSubscription?.unsubscribe();
+  deleteEntry(entryId: number) {
+    this.simulateDeleteEntry(entryId).subscribe({
+      next: (data) => {
+        this.budgetEntries = data;
+        this.status = "Entry deleted.";
+      },
+      error: () => this.status = "Error deleting entry."
+    })
   }
+
 
   simulateDataRetrieval() {
     return from(budgetEntriesData).pipe(delay(2000))
   }
-  deleteEntry(entryId:number) {
-    this.budgetEntries = this.budgetEntries.filter(entry => entry.id !== entryId)
+  simulateDeleteEntry(entryId: number) {
+      const updatedEntries = this.budgetEntries.filter(
+      entry => entry.id !== entryId
+    )
+    return of(updatedEntries)
   }
-    
+
+  ngOnDestroy() {
+    this.budgetSubscription?.unsubscribe();
+  }
 }
