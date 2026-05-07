@@ -4,8 +4,8 @@ import { BudgetEntry } from '../models/budget-entry.interface';
 @Component({
   selector: 'app-budget-entry',
   imports: [],
-  templateUrl: './budget-entry.html',
-  styleUrl: './budget-entry.css',
+  templateUrl: './budget-entry.component.html',
+  styleUrl: './budget-entry.component.css',
 })
 export class BudgetEntryComponent {
   @Input() entry: BudgetEntry = {id: 0, description: "", amount: 0};
