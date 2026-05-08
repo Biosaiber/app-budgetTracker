@@ -1,1 +1,8 @@
-<p>budget-overview works!</p>
+<h2>Budget Overview</h2>
+<div>
+@for (entry of entries ; track entry.id) {
+    <div>
+    {{entry.description}} {{entry.amount}}
+    </div>
+}
+</div>

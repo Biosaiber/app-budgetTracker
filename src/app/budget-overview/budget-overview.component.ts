@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { BudgetEntry } from '../models/budget-entry.interface';
 
 @Component({
   selector: 'app-budget-overview',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './budget-overview.component.css',
 })
 export class BudgetOverviewComponent {
-
+  @Input() entries: BudgetEntry[] = [];
 }
