@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BudgetEntry } from '../models/budget-entry.interface';
+import { BudgetEntryEditorComponent } from '../budget-entry-editor/budget-entry-editor.component';
 
 @Component({
   selector: 'app-budget-entry',
-  imports: [],
+  imports: [BudgetEntryEditorComponent],
   templateUrl: './budget-entry.component.html',
   styleUrl: './budget-entry.component.css',
 })
