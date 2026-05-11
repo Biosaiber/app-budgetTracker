@@ -5,5 +5,5 @@
 
 
 @for (entry of budgetEntries; track entry.id) {
-  <app-budget-entry [entry]="entry" (deleteEntry)="deleteEntry($event)"> </app-budget-entry>
+  <app-budget-entry [entry]="entry" (deleteEntry)="deleteEntry($event)" (resetEntry)="resetEntry()"> </app-budget-entry>
 }

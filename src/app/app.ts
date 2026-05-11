@@ -41,6 +41,9 @@ export class App implements OnInit, OnDestroy {
       error: () => this.status = "Error deleting entry."
     })
   }
+  resetEntry() {
+    this.status = "Entry values reset!";
+  }
 
 
   simulateDataRetrieval() {

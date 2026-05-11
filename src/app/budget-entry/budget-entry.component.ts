@@ -11,6 +11,7 @@ import { BudgetEntryEditorComponent } from '../budget-entry-editor/budget-entry-
 export class BudgetEntryComponent {
   @Input() entry: BudgetEntry = {id: 0, description: "", amount: 0};
   @Output() deleteEntry = new EventEmitter<number>();
+  @Output() resetEntry = new EventEmitter<void>();
   @ViewChild(BudgetEntryEditorComponent)
   editor!: BudgetEntryEditorComponent;
 
@@ -19,5 +20,6 @@ export class BudgetEntryComponent {
   }
   resetEditor() {
     this.editor.resetEntry();
+    this.resetEntry.emit();
   }
 }
