@@ -15,6 +15,7 @@ const budgetEntriesData: BudgetEntry[] = [
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [BudgetEntryComponent, BudgetOverviewComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'

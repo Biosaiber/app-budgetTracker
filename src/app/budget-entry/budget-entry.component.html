@@ -3,5 +3,6 @@
     <h3>{{entry.description}}</h3>
     <span>{{entry.amount}}</span>
     <button (click)="delete()">Delete</button>
+    <button (click)="resetEditor()">Reset</button>
   </div>
   <app-budget-entry-editor [entry]="entry"></app-budget-entry-editor>
