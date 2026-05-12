@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, AfterContentInit, EventEmitter, Input, Output, ViewChild, ContentChild, ElementRef } from '@angular/core';
 import { BudgetEntry } from '../models/budget-entry.interface';
 import { BudgetEntryEditorComponent } from '../budget-entry-editor/budget-entry-editor.component';
 
@@ -8,12 +8,16 @@ import { BudgetEntryEditorComponent } from '../budget-entry-editor/budget-entry-
   templateUrl: './budget-entry.component.html',
   styleUrl: './budget-entry.component.css',
 })
-export class BudgetEntryComponent {
+export class BudgetEntryComponent implements AfterContentInit {
   @Input() entry: BudgetEntry = {id: 0, description: "", amount: 0};
   @Output() deleteEntry = new EventEmitter<number>();
   @Output() resetEntry = new EventEmitter<void>();
   @ViewChild(BudgetEntryEditorComponent)
   editor!: BudgetEntryEditorComponent;
+  @ContentChild("projectedButton")
+  extraButton!: ElementRef;
+
+
 
   delete() {
     this.deleteEntry.emit(this.entry.id);
@@ -21,5 +25,10 @@ export class BudgetEntryComponent {
   resetEditor() {
     this.editor.resetEntry();
     this.resetEntry.emit();
+  }
+
+  ngAfterContentInit() {
+    console.log("ngAfterContentInit fired")
+    this.extraButton.nativeElement.textContent = "parentButton"
   }
 }

@@ -4,5 +4,6 @@
     <span>{{entry.amount}}</span>
     <button (click)="delete()">Delete</button>
     <button (click)="resetEditor()">Reset</button>
+    <ng-content></ng-content>
   </div>
   <app-budget-entry-editor [entry]="entry"></app-budget-entry-editor>
