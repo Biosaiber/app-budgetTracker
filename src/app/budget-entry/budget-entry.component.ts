@@ -11,7 +11,6 @@ import { BudgetEntryEditorComponent } from '../budget-entry-editor/budget-entry-
 export class BudgetEntryComponent implements AfterContentInit {
   @Input() entry: BudgetEntry = {id: 0, description: "", amount: 0};
   @Output() deleteEntry = new EventEmitter<number>();
-  @Output() resetEntry = new EventEmitter<void>();
   @ViewChild(BudgetEntryEditorComponent)
   editor!: BudgetEntryEditorComponent;
   @ContentChild("projectedButton")
@@ -24,7 +23,6 @@ export class BudgetEntryComponent implements AfterContentInit {
   }
   resetEditor() {
     this.editor.resetEntry();
-    this.resetEntry.emit();
   }
 
   ngAfterContentInit() {
