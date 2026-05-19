@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  background-color: #f8f9fa;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+h3 {
+    margin: 0;
+}
+.entry-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+button.button-delete {
+  background-color: #dc2626;
+}
+button.button-delete:hover {
+  background-color: #b91c1c;
+}
+button.button-reset {
+  background-color: #6b7280;
+}
+button.button-reset:hover {
+  background-color: #4b5563;
+}

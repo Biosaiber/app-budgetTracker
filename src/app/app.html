@@ -1,11 +1,14 @@
-<h1>Budget Tracker</h1>
-<p>{{status}}</p>
+<main class="main-container">
+  <h1>Budget Tracker</h1>
+  <p>{{status}}</p>
 
-<app-budget-overview [entries]="budgetEntries"></app-budget-overview>
+  <app-budget-overview [entries]="budgetEntries"></app-budget-overview>
 
-
-@for (entry of budgetEntries; track entry.id) {
-  <app-budget-entry [entry]="entry" (deleteEntry)="deleteEntry($event)">
-    <button #projectedButton>Projected button</button>
-  </app-budget-entry>
-}
+  <section class="entries-grid">
+    @for (entry of budgetEntries; track entry.id) {
+    <app-budget-entry [entry]="entry" (deleteEntry)="deleteEntry($event)">
+      <button #projectedButton>Projected button</button>
+    </app-budget-entry>
+    }
+  </section>
+</main>

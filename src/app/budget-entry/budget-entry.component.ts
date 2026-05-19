@@ -26,7 +26,6 @@ export class BudgetEntryComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    console.log("ngAfterContentInit fired")
     this.extraButton.nativeElement.textContent = "parentButton"
   }
 }

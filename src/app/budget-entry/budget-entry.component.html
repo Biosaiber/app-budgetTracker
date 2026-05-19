@@ -1,9 +1,9 @@
 
-  <div>
+  <div class="entry-content">
     <h3>{{entry.description}}</h3>
     <span>{{entry.amount}}</span>
-    <button (click)="delete()">Delete</button>
-    <button (click)="resetEditor()">Reset</button>
+    <button class="button-delete" (click)="delete()">Delete</button>
+    <button class="button-reset" (click)="resetEditor()">Reset</button>
     <ng-content></ng-content>
   </div>
   <app-budget-entry-editor [entry]="entry"></app-budget-entry-editor>
