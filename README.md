@@ -80,8 +80,8 @@ AppComponent
 ├── BudgetOverviewComponent
 │
 └── BudgetEntryComponent
-│
-└── BudgetEntryEditorComponent
+    │
+    └── BudgetEntryEditorComponent
 
 ```
 
