@@ -1,40 +1,113 @@
-# BudgetTrackerApp
-## Architektúra
+# Budget Tracker · Angular Learning Project
 
-Táto appka je **Personal Budget Tracker**. Má uložené budget položky typu:
+A training project built from scratch while learning Angular component architecture, data flow, lifecycle hooks, RxJS basics and component communication.
 
-```typescript
-id
-description
-amount
+This project was intentionally developed step by step without copying a finished implementation. The goal was not only to make the application work, but to understand why Angular applications are structured in a specific way.
+
+## Features
+
+- Display budget entries
+- Edit budget items using ngModel
+- Delete entries
+- Reset entry fields
+- Responsive card layout
+- Budget overview section
+- Component based UI structure
+- Content projection using ng-content
+- Child component access with ViewChild
+- Projected content access with ContentChild
+- Observable based simulated data loading
+
+## Angular concepts practiced
+
+### Component communication
+- @Input()
+- @Output()
+- EventEmitter
+- $event
+
+### Component architecture
+- Parent → Child data flow
+- Component ownership
+- Smart vs presentation responsibilities
+- Component styling boundaries
+
+### Angular rendering lifecycle
+- ngOnInit()
+- ngAfterViewInit()
+- ngAfterContentInit()
+
+### Component interaction
+- ViewChild
+- ContentChild
+- ng-content
+
+### Forms
+- ngModel
+- FormsModule
+- Two way binding
+
+### RxJS basics
+- Observable
+- subscribe()
+- from()
+- of()
+- delay()
+- unsubscribe()
+
+### TypeScript concepts practiced
+- Interfaces
+- Object references vs copies
+- Component class responsibilities
+
+## What I focused on while building
+
+This project was used to intentionally practice architectural thinking:
+
+- deciding where state belongs
+- separating responsibilities between components
+- understanding when to use Input vs Output
+- understanding ViewChild vs ContentChild
+- learning Angular style encapsulation
+- understanding object references and Angular change detection
+
+## Project structure
+
 ```
 
-základný dátový model v `BudgetEntry` interface.
+AppComponent
+│
+├── BudgetOverviewComponent
+│
+└── BudgetEntryComponent
+│
+└── BudgetEntryEditorComponent
 
-### Appka má 4 hlavné časti:
+```
 
-1. **AppComponent**  
-  hlavný rodič, drží dáta, status, načítanie dát a mazanie položiek.
-2. **BudgetOverviewComponent**  
-  zobrazí prehľad všetkých položiek. Dostáva dáta cez `@Input() entries`.
-3. **BudgetEntryComponent**  
-  zobrazuje jednu konkrétnu položku, má tlačidlá reset/delete a komunikuje s rodičom cez `@Output()`.
-4. **BudgetEntryEditorComponent**  
-  upravuje jednu položku cez inputy a `ngModel`.
+## Technologies
 
-### Postup:
+- Angular
+- TypeScript
+- RxJS
+- HTML
+- CSS
 
-1. **interface**  
-  Najprv si vytvoríme typ dát.
-  
-2. **app component**  
-  Potom rodičovský mozog aplikácie: pole položiek, status, fake dáta.
-  
-3. **overview component**  
-  Potom jednoduchý prehľad položiek.
-  
-4. **entry component**  
-  Potom jedna karta položky.
-  
-5. **editor component**  
-  Nakoniec editor vo vnútri jednej položky.
+## Running locally
+
+```bash
+npm install
+ng serve
+```
+
+Open:
+
+```
+http://localhost:4200
+```
+
+## Learning note
+
+The main goal of this project was not speed.
+
+The goal was understanding.
