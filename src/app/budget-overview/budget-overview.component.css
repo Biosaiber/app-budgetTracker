@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  background-color: #f8f9fa;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 8px;
+}
+h2 {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+td:last-child {
+  text-align: right;
+}

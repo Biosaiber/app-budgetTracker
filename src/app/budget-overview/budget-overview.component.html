@@ -1,8 +1,11 @@
 <h2>Budget Overview</h2>
-<div>
-@for (entry of entries ; track entry.id) {
-    <div>
-    {{entry.description}} {{entry.amount}}
-    </div>
-}
-</div>
+<table>
+    @for (entry of entries ; track entry.id) {
+    <tr>
+
+        <td> {{entry.description}}</td>
+        <td> {{entry.amount}}€</td>
+
+    </tr>
+    }
+</table>
